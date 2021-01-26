@@ -7,16 +7,18 @@ using namespace std;
 
 int main() {
 	printf("Program oblicza ekstrema tablicy i ich srednia\n");
-	int n = 10;
+	printf("Podaj liczbe elementow tablicy: \n");
+	int n;
+	cin >> n;
 	int min=200, max=-100, srednia=0;
+	int *tab = (int*)malloc(n * sizeof(int));
 	srand(time(NULL));
-	int tab[100];
-	for (int i = 0; i < 100; i++) {
+	for (int i = 0; i < n; i++) {
 		tab[i] = rand() % 100;
 		if (tab[i] < min) min = tab[i];
 		if (tab[i] > max) max = tab[i];
 		srednia += tab[i];
 	}
-	printf("Max: %d, Min: %d, Srednia: %d", max, min, srednia / 100);
+	printf("Max: %d, Min: %d, Srednia: %d", max, min, srednia / n);
 
 }
